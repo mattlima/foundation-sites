@@ -5,6 +5,7 @@ import $ from 'jquery';
 import { Plugin } from './foundation.core.plugin';
 import { onLoad, GetYoDigits } from './foundation.core.utils';
 import { SmoothScroll } from './foundation.smoothScroll';
+import { Triggers } from './foundation.util.triggers';
 
 /**
  * Magellan module.
@@ -28,6 +29,9 @@ class Magellan extends Plugin {
 
     this._init();
     this.calcPoints();
+    
+    //Triggers init is idempotent, just need to make sure it is initialized
+    Triggers.init($);
   }
 
   /**
